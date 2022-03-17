@@ -17,9 +17,27 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    async void FixedUpdate()
     {
         float HorizontalInput = Input.GetAxisRaw("Horizontal"); //gets axis as vector2
-        transform.position += new Vector3(HorizontalInput, 0, 0) * Time.deltaTime * moveSpeed;         
+
+       //transform.position += new Vector3(HorizontalInput, 0, 0) * Time.deltaTime * moveSpeed;     
+        rb.MovePosition(new Vector2 (transform.position.x + HorizontalInput * moveSpeed * Time.deltaTime, transform.position.y + 0 * moveSpeed * Time.deltaTime));
+
+        anim.SetFloat("HorizontalInput", HorizontalInput);
+
+        if (HorizontalInput == 0)
+        {
+            anim.SetBool("isWalking", false);
+        }
+        else
+        {
+            anim.SetBool("isWalking", true);
+        }        
+    }
+
+    void TransitiionToIdle()
+    {
+        anim.SetBool("Spawned", true);
     }
 }

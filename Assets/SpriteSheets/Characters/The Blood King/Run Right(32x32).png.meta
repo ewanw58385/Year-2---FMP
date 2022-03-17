@@ -1,46 +1,31 @@
 fileFormatVersion: 2
-guid: e43954ccd3aa58e42bb5ba42f43a76c4
+guid: 39a4069cdf93d35419ea7153dd698e29
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 256208957278509065
-    second: teleport appear (168x79)_0
+      213: 5428165257614269960
+    second: Run Right(32x32)_0
   - first:
-      213: -8555434302639576997
-    second: teleport appear (168x79)_1
+      213: -4229434253795131824
+    second: Run Right(32x32)_1
   - first:
-      213: 3635999737563595368
-    second: teleport appear (168x79)_2
+      213: 6361370411296807765
+    second: Run Right(32x32)_2
   - first:
-      213: 864570385568836256
-    second: teleport appear (168x79)_3
+      213: -6027459280991324198
+    second: Run Right(32x32)_3
   - first:
-      213: -3085412474696973495
-    second: teleport appear (168x79)_4
+      213: 7612626328479299310
+    second: Run Right(32x32)_4
   - first:
-      213: -2827713580350814327
-    second: teleport appear (168x79)_5
+      213: 9044243433456018991
+    second: Run Right(32x32)_5
   - first:
-      213: 509390151390932431
-    second: teleport appear (168x79)_6
+      213: 6068948562101351714
+    second: Run Right(32x32)_6
   - first:
-      213: 1420995626956292270
-    second: teleport appear (168x79)_7
-  - first:
-      213: -8434707032416113688
-    second: teleport appear (168x79)_8
-  - first:
-      213: 3673061615616215491
-    second: teleport appear (168x79)_9
-  - first:
-      213: 5702472493615927210
-    second: teleport appear (168x79)_10
-  - first:
-      213: 5445037957859235004
-    second: teleport appear (168x79)_11
-  - first:
-      213: -5651220047889572458
-    second: teleport appear (168x79)_12
+      213: -6327101330980716359
+    second: Run Right(32x32)_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -142,253 +127,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: teleport appear (168x79)_0
+      name: Run Right(32x32)_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 790
-        width: 89
-        height: 20
+        x: 6
+        y: 224
+        width: 24
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 908dbde60bc3e8300800000000000000
-      internalID: 256208957278509065
+      spriteID: 80e173aca87b45b40800000000000000
+      internalID: 5428165257614269960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teleport appear (168x79)_1
+      name: Run Right(32x32)_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 711
-        width: 88
-        height: 20
+        x: 6
+        y: 192
+        width: 22
+        height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b58e9f394ddf44980800000000000000
-      internalID: -8555434302639576997
+      spriteID: 05efba564f70e45c0800000000000000
+      internalID: -4229434253795131824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teleport appear (168x79)_2
+      name: Run Right(32x32)_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 632
-        width: 83
-        height: 20
+        x: 5
+        y: 162
+        width: 26
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86244e83f7aa57230800000000000000
-      internalID: 3635999737563595368
+      spriteID: 55bd6026fa0284850800000000000000
+      internalID: 6361370411296807765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teleport appear (168x79)_3
+      name: Run Right(32x32)_3
       rect:
         serializedVersion: 2
-        x: 22
-        y: 553
-        width: 73
-        height: 20
+        x: 5
+        y: 130
+        width: 27
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0aa272b5f229ffb00800000000000000
-      internalID: 864570385568836256
+      spriteID: ad7716208b92a5ca0800000000000000
+      internalID: -6027459280991324198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teleport appear (168x79)_4
+      name: Run Right(32x32)_4
       rect:
         serializedVersion: 2
-        x: 21
-        y: 474
-        width: 65
-        height: 20
+        x: 11
+        y: 96
+        width: 19
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 943c02493b96e25d0800000000000000
-      internalID: -3085412474696973495
+      spriteID: ee67bc4ff4b75a960800000000000000
+      internalID: 7612626328479299310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teleport appear (168x79)_5
+      name: Run Right(32x32)_5
       rect:
         serializedVersion: 2
-        x: 27
-        y: 395
-        width: 55
-        height: 20
+        x: 11
+        y: 64
+        width: 17
+        height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98744a40b71f1c8d0800000000000000
-      internalID: -2827713580350814327
+      spriteID: f262e49fb7b938d70800000000000000
+      internalID: 9044243433456018991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teleport appear (168x79)_6
+      name: Run Right(32x32)_6
       rect:
         serializedVersion: 2
-        x: 29
-        y: 316
-        width: 51
-        height: 20
+        x: 10
+        y: 34
+        width: 21
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcd2db1d4a7b11700800000000000000
-      internalID: 509390151390932431
+      spriteID: 2253b24009c393450800000000000000
+      internalID: 6068948562101351714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teleport appear (168x79)_7
+      name: Run Right(32x32)_7
       rect:
         serializedVersion: 2
-        x: 36
-        y: 237
-        width: 40
-        height: 20
+        x: 10
+        y: 2
+        width: 22
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea00d147ef368b310800000000000000
-      internalID: 1420995626956292270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teleport appear (168x79)_8
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 158
-        width: 31
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8eb295c94a6e1fa80800000000000000
-      internalID: -8434707032416113688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teleport appear (168x79)_9
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 79
-        width: 25
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c94de4241659f230800000000000000
-      internalID: 3673061615616215491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teleport appear (168x79)_10
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 0
-        width: 23
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aafc96b1580432f40800000000000000
-      internalID: 5702472493615927210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teleport appear (168x79)_12
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 869
-        width: 89
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69dd9f1de45d291b0800000000000000
-      internalID: -5651220047889572458
+      spriteID: 9b04ef4acde9138a0800000000000000
+      internalID: -6327101330980716359
       vertices: []
       indices: 
       edges: []
