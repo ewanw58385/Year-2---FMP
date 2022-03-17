@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         float HorizontalInput = Input.GetAxisRaw("Horizontal"); //gets axis as vector2
-
-        Vector2 direction = new Vector2(HorizontalInput * moveSpeed * Time.fixedDeltaTime, 0);
-        rb.velocity = direction;
+        transform.position += new Vector3(HorizontalInput, 0, 0) * Time.deltaTime * moveSpeed;         
     }
 }
