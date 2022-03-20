@@ -17,16 +17,18 @@ public class IdleState : BaseState
     public override void Enter()
     {
         base.Enter();
+
         _psm.anim.Play("Idle");
+        _psm.anim.SetBool("Jump", false);
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
 
-        horizontalInput = Input.GetAxisRaw("Horizontal"); //gets axis as vector2
+        horizontalInput = Input.GetAxisRaw("Horizontal"); //gets horizontal axis as float
 
-        if (Input.GetKeyDown(KeyCode.Space) && GroundCheck())
+        if (Input.GetKeyDown(KeyCode.Space) && _psm.GroundCheck())
         {
             _psm.ChangeState(_psm.jump);
         }
@@ -35,10 +37,5 @@ public class IdleState : BaseState
         {
             _psm.ChangeState(_psm.walking);
         }
-    }
-
-    private bool GroundCheck()
-    {
-        return _psm.player.GetComponent<groundCheck>().isGrounded;
     }
 }

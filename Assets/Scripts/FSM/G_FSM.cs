@@ -45,4 +45,10 @@ public class G_FSM : MonoBehaviour
     {
         return null;
     }
+
+        private void OnGUI()
+    {
+        string content = currentState != null ? currentState.stateName : "(no current state)";
+        GUILayout.Label($"<color='black'><size=40>{content}</size></color>");
+    }
 }

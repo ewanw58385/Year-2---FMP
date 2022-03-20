@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_FSM : G_FSM //this is the StateMachine class for MOVEMENT. It inherits from the StateMachine class (so contains all functionality of the generic state machine)
 {
     [HideInInspector]
-    public IdleState idle; //holds references for the states for this machine 
+    public IdleState idle; //Declares the states for this machine to be initialised 
     [HideInInspector]
     public WalkingState walking;
     [HideInInspector]
@@ -37,5 +37,10 @@ public class Player_FSM : G_FSM //this is the StateMachine class for MOVEMENT. I
     protected override BaseState GetInitialState() //overrides BaseState GetInitialState function to return the correct state
     {
         return spawn; //first state to be used. Can be whatever state you want. 
+    }
+
+        public bool GroundCheck()
+    {
+        return player.GetComponent<GroundCheck>().isGrounded;
     }
 }

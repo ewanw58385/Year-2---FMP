@@ -7,6 +7,8 @@ public class WalkingState : BaseState
 {
     private Player_FSM _psm;
 
+
+
     private float horizontalInput;
 
 
@@ -18,6 +20,8 @@ public class WalkingState : BaseState
     {
         base.Enter();
         _psm.anim.Play("Walking");
+        _psm.anim.SetBool("Jump", false);
+
     }
 
     public override void UpdateLogic()
@@ -25,6 +29,10 @@ public class WalkingState : BaseState
         base.UpdateLogic();
         _psm.anim.SetFloat("HorizontalInput", horizontalInput);
 
+        if (Input.GetKeyDown(KeyCode.Space) && _psm.GroundCheck())
+        {
+            _psm.ChangeState(_psm.jump);
+        }
     }
 
     public override void UpdatePhysics()

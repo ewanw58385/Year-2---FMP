@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
-public class JumpState : BaseState
+public class JumpState : BaseState 
 {
     private Player_FSM _psm;
 
     private Vector2 jumpDirection;
-    private float jumpForce = 10f;
-    
+    private float jumpForce = 8f;
+    private float jumpMoveSpeed = 3f; 
+    private float horizontalInput;
+
+    private bool _isGrounded;
+
     public JumpState(Player_FSM stateMachine) : base("jump", stateMachine)
     {
         _psm = stateMachine;
@@ -17,23 +22,24 @@ public class JumpState : BaseState
     public override void Enter()
     {
         base.Enter();
-        _psm.anim.Play("Jump");
+
+        _psm.rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        _psm.anim.SetBool("Jump", true);
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-
-        GroundCheck();
     }
 
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
-        
-        _psm.rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
-        if(GroundCheck())
+            horizontalInput = Input.GetAxisRaw("Horizontal"); //gets axis as vector2
+            _psm.rb.velocity = new Vector2(horizontalInput * jumpMoveSpeed, _psm.rb.velocity.y); //applies velocity on the X axis while in the air without affecting Y velocity from jump
+
+        if(_psm.anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.3f && _psm.GroundCheck())
         {
             _psm.ChangeState(_psm.idle);
         }
@@ -43,9 +49,5 @@ public class JumpState : BaseState
     {
         base.Exit();
     }
-
-        private bool GroundCheck()
-    {
-        return _psm.player.GetComponent<groundCheck>().isGrounded;
-    }
 }
+
