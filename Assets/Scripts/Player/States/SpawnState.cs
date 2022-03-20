@@ -27,6 +27,7 @@ public class SpawnState : BaseState
         {
             _psm.anim.SetBool("Spawned", true); //transition to idle anim
             _psm.ChangeState(_psm.idle); //change to idle state
+            Debug.Log("Spawned");
         }
     }
 

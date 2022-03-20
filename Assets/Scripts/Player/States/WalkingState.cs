@@ -27,12 +27,6 @@ public class WalkingState : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-        _psm.anim.SetFloat("HorizontalInput", horizontalInput);
-
-        if (Input.GetKeyDown(KeyCode.Space) && _psm.GroundCheck())
-        {
-            _psm.ChangeState(_psm.jump);
-        }
     }
 
     public override void UpdatePhysics()
@@ -42,10 +36,14 @@ public class WalkingState : BaseState
         horizontalInput = Input.GetAxisRaw("Horizontal"); //gets axis as vector2
         _psm.rb.MovePosition(new Vector2 (_psm.player.position.x + horizontalInput * _psm.moveSpeed * Time.deltaTime, _psm.player.position.y + 0 * _psm.moveSpeed * Time.deltaTime));
 
-
         if (horizontalInput == 0)
         {
             _psm.ChangeState(_psm.idle);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && _psm.GroundCheck())
+        {
+            _psm.ChangeState(_psm.jump);
         }
     }
 }

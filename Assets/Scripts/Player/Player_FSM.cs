@@ -19,6 +19,8 @@ public class Player_FSM : G_FSM //this is the StateMachine class for MOVEMENT. I
     public Animator anim;
 
     public float moveSpeed = 3.5f;
+    public float jumpForce = 8f;
+    public float jumpMoveSpeed = 3f;
 
     public void Awake()
     {
@@ -41,6 +43,6 @@ public class Player_FSM : G_FSM //this is the StateMachine class for MOVEMENT. I
 
         public bool GroundCheck()
     {
-        return player.GetComponent<GroundCheck>().isGrounded;
+        return player.GetComponent<PlayerManager>().isGrounded;
     }
 }

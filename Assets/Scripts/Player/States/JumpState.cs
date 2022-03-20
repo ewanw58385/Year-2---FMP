@@ -7,10 +7,8 @@ public class JumpState : BaseState
 {
     private Player_FSM _psm;
 
-    private Vector2 jumpDirection;
-    private float jumpForce = 8f;
-    private float jumpMoveSpeed = 3f; 
     private float horizontalInput;
+    private Vector2 jumpDirection; 
 
     private bool _isGrounded;
 
@@ -23,7 +21,7 @@ public class JumpState : BaseState
     {
         base.Enter();
 
-        _psm.rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        _psm.rb.AddForce(Vector2.up * _psm.jumpForce, ForceMode2D.Impulse);
         _psm.anim.SetBool("Jump", true);
     }
 
@@ -37,7 +35,7 @@ public class JumpState : BaseState
         base.UpdatePhysics();
 
             horizontalInput = Input.GetAxisRaw("Horizontal"); //gets axis as vector2
-            _psm.rb.velocity = new Vector2(horizontalInput * jumpMoveSpeed, _psm.rb.velocity.y); //applies velocity on the X axis while in the air without affecting Y velocity from jump
+            _psm.rb.velocity = new Vector2(horizontalInput * _psm.jumpMoveSpeed, _psm.rb.velocity.y); //applies velocity on the X axis while in the air without affecting Y velocity from jump
 
         if(_psm.anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.3f && _psm.GroundCheck())
         {
