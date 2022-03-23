@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
         Flip(horiInput);
     }
 
-    private void OnCollisionStay2D(Collision2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.tag == "floor") 
         {
@@ -26,7 +26,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D col)
+    private void OnTriggerExit2D(Collider2D col)
     {
         isGrounded = false;
         Debug.Log("not grounded");

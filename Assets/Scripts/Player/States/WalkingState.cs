@@ -45,5 +45,10 @@ public class WalkingState : BaseState
         {
             _psm.ChangeState(_psm.jump);
         }
+
+        if (!_psm.GroundCheck())
+        {
+            _psm.ChangeState(_psm.jump);
+        }
     }
 }
