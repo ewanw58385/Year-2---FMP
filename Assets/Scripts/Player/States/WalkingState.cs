@@ -1,4 +1,4 @@
-
+ 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,7 +41,7 @@ public class WalkingState : BaseState
             _psm.ChangeState(_psm.idle);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && _psm.GroundCheck())
+        if (Input.GetKey(KeyCode.Space) && _psm.GroundCheck())
         {
             _psm.ChangeState(_psm.jump);
         }
