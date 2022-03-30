@@ -19,7 +19,7 @@ public class IdleState : BaseState
         base.Enter();
 
         _psm.anim.Play("Idle");
-        _psm.anim.SetBool("Jump", false);
+        _psm.anim.SetBool("Jump", false); //reset jump bool
     }
 
     public override void UpdateLogic()
@@ -37,5 +37,10 @@ public class IdleState : BaseState
         {
             _psm.ChangeState(_psm.walking);
         }
+    }
+
+    public override void UpdatePhysics()
+    {
+
     }
 }
