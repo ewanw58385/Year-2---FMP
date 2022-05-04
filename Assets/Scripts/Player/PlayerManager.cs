@@ -22,14 +22,14 @@ public class PlayerManager : MonoBehaviour
         if (col.gameObject.tag == "floor") 
         {
             isGrounded = true;
-            Debug.Log("grounded");
+            //Debug.Log("grounded");
         }
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
         isGrounded = false;
-        Debug.Log("not grounded");
+        //Debug.Log("not grounded");
     }
 
     

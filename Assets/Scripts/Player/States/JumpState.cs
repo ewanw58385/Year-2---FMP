@@ -34,7 +34,6 @@ public class JumpState : BaseState
 
             horizontalInput = Input.GetAxisRaw("Horizontal"); //gets axis as vector2
             _psm.rb.velocity = new Vector2(horizontalInput * _psm.jumpMoveSpeed, _psm.rb.velocity.y); //applies velocity on the X axis while in the air without affecting Y velocity from jump
-            Debug.Log(_psm.rb.velocity.y);
 
          if(_psm.rb.velocity.y <= 0 && _psm.GroundCheck()) //if falling + touching ground
          {
