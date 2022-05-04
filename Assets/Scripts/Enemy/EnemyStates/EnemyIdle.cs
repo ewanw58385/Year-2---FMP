@@ -21,16 +21,16 @@ public class EnemyIdle : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            _EFSM.ChangeState(_EFSM.moving);
-        }
     }
 
     public override void UpdatePhysics()
     {
+        base.UpdatePhysics();
 
+            if (_EFSM.chasingPlayer == true)
+        {
+            _EFSM.ChangeState(_EFSM.moving);
+        }
     }
 
     public override void Exit()
