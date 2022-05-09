@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class EnemyCombatManager : MonoBehaviour
 {
-    public Animator anim;
+    [HideInInspector]public Animator anim;
+
+    public GameObject hitVFX;
+    public Transform hitVFXPosition;
+
+    public float enemyHealth = 9;
 
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        hitVFXPosition = transform.Find("HitVFXPosition");
+    }
+
+    void Update()
+    {
+        Debug.Log(enemyHealth);
+
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     
     public void ApplyDamage(float damageTaken)
-    {
-        Debug.Log("Taken " + damageTaken + " damage!");
-        
-        anim.Play("hitVFX");
+    {        
+        anim.Play("hitAnim");
+        Instantiate(hitVFX, hitVFXPosition.position, Quaternion.identity);
+
+        enemyHealth =  enemyHealth - damageTaken;
     }
 }
