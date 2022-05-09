@@ -2308,7 +2308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.18, y: -0.95000005, z: -10}
+  m_LocalPosition: {x: -2.18, y: -1.95, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5604,6 +5604,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &983051393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 983051394}
+  m_Layer: 0
+  m_Name: weakAttackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &983051394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983051393}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.065, y: -0.23, z: -20.930058}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2036436027}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1047739083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4135312436173448, guid: 993b1a4c7342f0547a43f1e3b3a06c03, type: 3}
@@ -7513,7 +7543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122135052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.18, y: -0.95000005, z: -10}
+  m_LocalPosition: {x: -2.18, y: -1.95, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 321992310}
@@ -7607,11 +7637,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1184707139}
   - component: {fileID: 1184707138}
-  - component: {fileID: 1184707137}
   - component: {fileID: 1184707136}
   - component: {fileID: 1184707135}
   - component: {fileID: 1184707134}
-  m_Layer: 0
+  - component: {fileID: 1184707140}
+  - component: {fileID: 1184707137}
+  m_Layer: 9
   m_Name: EasyEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7695,7 +7726,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 9.96, y: 2.68}
+  m_Size: {x: 1.93, y: 0.43}
   m_Direction: 1
 --- !u!50 &1184707138
 Rigidbody2D:
@@ -7733,6 +7764,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1184707140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184707133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d79f51b459a6846b574150f3ec33c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1001 &1249923633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63353,7 +63397,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -63680,6 +63724,7 @@ GameObject:
   - component: {fileID: 2036436030}
   - component: {fileID: 2036436034}
   - component: {fileID: 2036436035}
+  - component: {fileID: 2036436036}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -63747,9 +63792,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036436025}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.18, y: -1.7, z: 0}
+  m_LocalPosition: {x: -2.18, y: -2.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 983051394}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63916,6 +63962,27 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &2036436036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036436025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3521ce94b22666249867a06283e0ea2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  weakAttackPos: {fileID: 983051394}
+  weakAttackRange: 0.8
+  weakAttackDamage: 1.5
+  heavyAttackPos: {fileID: 0}
+  heavtAttackRange: 4
+  heavyAttackDamage: 0
 --- !u!1 &2081832861
 GameObject:
   m_ObjectHideFlags: 0

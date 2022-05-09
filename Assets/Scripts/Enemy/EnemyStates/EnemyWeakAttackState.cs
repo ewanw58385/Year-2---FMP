@@ -18,7 +18,6 @@ public class EnemyWeakAttackState : BaseState
         _EFSM.rb.velocity = Vector2.zero; //disable velocity while player is attacking
 
         _EFSM.enemyAnim.Play("weakattack");
-
     }
 
     public override void UpdateLogic()

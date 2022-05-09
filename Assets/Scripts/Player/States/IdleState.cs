@@ -40,7 +40,6 @@ public class IdleState : BaseState
         
         if (Input.GetMouseButtonDown(0))
         {
-        Debug.Log("attack");
             _psm.ChangeState(_psm.weakattack);
         }
     }

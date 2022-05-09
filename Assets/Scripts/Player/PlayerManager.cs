@@ -10,7 +10,6 @@ public class PlayerManager : MonoBehaviour
     private float horiInput;
     public float scaleOfPlayer;
 
-
     void Update()
     {
         horiInput = Input.GetAxis("Horizontal");
