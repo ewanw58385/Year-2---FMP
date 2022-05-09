@@ -12,13 +12,18 @@ public class Player_FSM : G_FSM //this is the StateMachine class for MOVEMENT. I
     public SpawnState spawn;
     [HideInInspector]
     public JumpState jump;
+    [HideInInspector]
+    public RunState running;
+    [HideInInspector]
+    public WeakAttackState weakattack;
 
     [HideInInspector]
     public Transform player;
     public Rigidbody2D rb;
     public Animator anim;
 
-    public float moveSpeed = 3.5f;
+    public float moveSpeed = 4f;
+    public float runSpeed = 6.75f;
     public float jumpForce = 8f;
     public float jumpMoveSpeed = 3f;
 
@@ -33,7 +38,8 @@ public class Player_FSM : G_FSM //this is the StateMachine class for MOVEMENT. I
         walking = new WalkingState(this);
         spawn = new SpawnState(this);
         jump = new JumpState(this);
-
+        running = new RunState(this);
+        weakattack = new WeakAttackState(this);
     }
 
     protected override BaseState GetInitialState() //overrides BaseState GetInitialState function to return the correct state

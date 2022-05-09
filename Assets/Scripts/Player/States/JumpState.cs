@@ -20,7 +20,8 @@ public class JumpState : BaseState
         base.Enter();
 
         _psm.rb.AddForce(Vector2.up * _psm.jumpForce, ForceMode2D.Impulse);
-        _psm.anim.SetBool("Jump", true);
+        //_psm.anim.SetBool("Jump", true);
+        _psm.anim.Play("Jump");
     }
 
     public override void UpdateLogic()

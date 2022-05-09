@@ -4,40 +4,25 @@ using UnityEngine;
 
 public class Enemy_FSM : G_FSM
 {
-    [HideInInspector]
-    public EnemyIdle idle;
-    public EnemyMoving moving;
+    [HideInInspector]public EnemyIdle idle;
+    [HideInInspector]public EnemyMoving moving;
+    [HideInInspector]public EnemyWeakAttackState weakattack;
+    [HideInInspector]public EnemyHeavyAttackState heavyattack;
 
-    public bool chasingPlayer;
-
-    [HideInInspector] public Transform enemyVFX;  
     [HideInInspector] public Animator enemyAnim;
+    [HideInInspector] public EnemyAI enemyAI;
+    [HideInInspector] public Rigidbody2D rb;
 
     public void Awake()
     {
         idle = new EnemyIdle(this);
         moving = new EnemyMoving(this);
+        weakattack = new EnemyWeakAttackState(this);
+        heavyattack = new EnemyHeavyAttackState(this);
 
-        enemyVFX = transform.GetChild(0);
-        enemyAnim = enemyVFX.GetComponent<Animator>();
-    }
-
-    public void OnTriggerStay2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.Log("moving towards player");
-            chasingPlayer = true;
-        }
-    }
-    
-    public void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.Log("stationary");
-            chasingPlayer = false;
-        }
+        enemyAI = GetComponent<EnemyAI>(); //gets reference of the AI script for states to use 
+        enemyAnim = transform.GetChild(0).GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     protected override BaseState GetInitialState() 

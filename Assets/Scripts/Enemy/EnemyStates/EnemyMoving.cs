@@ -6,6 +6,8 @@ public class EnemyMoving : BaseState
 {   
     private Enemy_FSM _EFSM;
 
+    public EnemyAI enemyAI; //declares public enemyAI script 
+
     public EnemyMoving(Enemy_FSM stateMachine) : base("moving", stateMachine)
     {
         _EFSM = stateMachine;
@@ -14,12 +16,26 @@ public class EnemyMoving : BaseState
     public override void Enter()
     {
         base.Enter();
-        _EFSM.enemyAnim.Play("moving");
+        _EFSM.enemyAnim.Play("moving"); //play moving animation
+
+        enemyAI = _EFSM.enemyAI;
+        enemyAI.InvokeRepeating("UpdatePath", 0, 0.1f); //begin updating the path
+
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
+
+        if (enemyAI.playerWithinRange == false) //if enemyAI script detects target (player) out of range
+        {
+           _EFSM.ChangeState(_EFSM.idle); //transition to idle state;
+        }
+
+        if (enemyAI.attackPlayer == true) //if enemyAI script detects target (player) out of range
+        {
+           _EFSM.ChangeState(_EFSM.weakattack); //transition to idle state;
+        }
     }
 
     public override void UpdatePhysics()
@@ -30,5 +46,7 @@ public class EnemyMoving : BaseState
     public override void Exit()
     {
         base.Exit();
+        enemyAI.CancelInvoke("UpdatePath");
+        enemyAI.path = null;
     }
 }
