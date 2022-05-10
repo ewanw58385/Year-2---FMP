@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCombatManager : MonoBehaviour
+public class PlayerCombatManager : MonoBehaviour //values declared that enemy FSM states use
 {
     public LayerMask enemyLayer;
 

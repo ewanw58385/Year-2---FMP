@@ -27,6 +27,11 @@ public class EnemyIdle : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
+
+        if (_EFSM.hitCondition == true)
+        {
+            _EFSM.ChangeState(_EFSM.hitstate);
+        }
     }
 
     public override void UpdatePhysics()

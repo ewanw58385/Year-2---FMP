@@ -36,6 +36,11 @@ public class EnemyMoving : BaseState
         {
            _EFSM.ChangeState(_EFSM.weakattack); //transition to idle state;
         }
+
+        if (_EFSM.hitCondition == true)
+        {
+            _EFSM.ChangeState(_EFSM.hitstate);
+        }
     }
 
     public override void UpdatePhysics()

@@ -15,7 +15,7 @@ public class EnemyHeavyAttackState : BaseState
     {
         base.Enter();
 
-        _EFSM.rb.velocity = Vector2.zero;
+        //_EFSM.rb.velocity = Vector2.zero;
 
         _EFSM.enemyAnim.Play("sweepattack");
     }
@@ -27,6 +27,11 @@ public class EnemyHeavyAttackState : BaseState
         if (_EFSM.enemyAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.3f)
         {
             _EFSM.ChangeState(_EFSM.moving);
+        }
+
+        if (_EFSM.hitCondition == true)
+        {
+            _EFSM.ChangeState(_EFSM.hitstate);
         }
     }
 }

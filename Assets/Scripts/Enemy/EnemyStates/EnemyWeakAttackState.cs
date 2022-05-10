@@ -15,7 +15,7 @@ public class EnemyWeakAttackState : BaseState
     {
         base.Enter();
 
-        _EFSM.rb.velocity = Vector2.zero; //disable velocity while player is attacking
+        //_EFSM.rb.velocity = Vector2.zero; //disable velocity while player is attacking
 
         _EFSM.enemyAnim.Play("weakattack");
     }
@@ -28,5 +28,11 @@ public class EnemyWeakAttackState : BaseState
         {
             _EFSM.ChangeState(_EFSM.heavyattack); //transition to moving state 
         }
+
+        if (_EFSM.hitCondition == true)
+        {
+            _EFSM.ChangeState(_EFSM.hitstate);
+        }
+
     }
 }
