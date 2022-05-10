@@ -39,7 +39,7 @@ public class WeakAttackState : BaseState
                     enemyHit.GetComponent<Enemy_FSM>().hitCondition = true; //set the condition for transitioning to hit state to true
                     enemyHit.GetComponent<Enemy_FSM>().damageTaken = _pcm.weakAttackDamage; //damage float for hit state
 
-                    Debug.Log("applied damage");
+                    //Debug.Log("applied damage");
                 }
                 
                 preventAttackingEveryFrame = false;

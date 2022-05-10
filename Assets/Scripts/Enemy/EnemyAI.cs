@@ -28,9 +28,7 @@ public class EnemyAI : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, aggroRange); //draws a sphere to visually see how close the player is before aggrovating 
         Gizmos.DrawWireSphere(transform.position, attackRange); //draws a sphere to visually see how close the player is before attacking
-    }
-
-    
+    }    
 
     // Start is called before the first frame update
     void Start()

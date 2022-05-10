@@ -34,5 +34,16 @@ public class EnemyWeakAttackState : BaseState
             _EFSM.ChangeState(_EFSM.hitstate);
         }
 
+        if(_EFSM.enemyDead)
+        {
+            _EFSM.ChangeState(_EFSM.dead);
+        }
+
+        float dist = Vector2.Distance(_EFSM.rb.position, _EFSM.player.transform.position);
+        if (dist >= _EFSM.enemyAI.aggroRange) //if player walks away while mid attack
+        {
+            _EFSM.ChangeState(_EFSM.moving); //transition to moving state
+        }
+
     }
 }

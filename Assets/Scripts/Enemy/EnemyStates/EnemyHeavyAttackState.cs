@@ -33,5 +33,10 @@ public class EnemyHeavyAttackState : BaseState
         {
             _EFSM.ChangeState(_EFSM.hitstate);
         }
+
+        if(_EFSM.enemyDead)
+        {
+            _EFSM.ChangeState(_EFSM.dead);
+        }
     }
 }

@@ -41,6 +41,11 @@ public class EnemyMoving : BaseState
         {
             _EFSM.ChangeState(_EFSM.hitstate);
         }
+
+        if(_EFSM.enemyDead)
+        {
+            _EFSM.ChangeState(_EFSM.dead);
+        }
     }
 
     public override void UpdatePhysics()

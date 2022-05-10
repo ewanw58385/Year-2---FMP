@@ -7,8 +7,8 @@ public class EnemyHitState : BaseState
     private Enemy_FSM _EFSM;
     private EnemyCombatManager _ECM;
 
-    private GameObject player;
-    public float knockbackForce = 40;
+    public float knockbackForceX = 150;
+    public float knockbackForceY = 1250;
 
     public EnemyHitState(Enemy_FSM statemachine) : base("hitstate", statemachine)
     {
@@ -21,7 +21,7 @@ public class EnemyHitState : BaseState
 
         _ECM = _EFSM.transform.GetComponent<EnemyCombatManager>(); //gets reference to combat manager for deducting health 
 
-        player = GameObject.Find("Player"); //for applying a knockback effect in the right direction
+        _EFSM.player = GameObject.Find("Player"); //for applying a knockback effect in the right direction
         
         _EFSM.enemyAnim.Play("hitAnim"); //plays hit anim
         _ECM.ApplyDamage(_EFSM.damageTaken); //calls the apply damage function from the EnemyCombatManager, passing the damageTaken parameter (set in the player attack state) as the damage to be deducted
@@ -30,23 +30,33 @@ public class EnemyHitState : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-        
-        if (_EFSM.enemyAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.2f) //if attack animation has finished 
+
+        if(_EFSM.enemyDead)
         {
-            float randomNumber = Random.Range(0, 1);
+            _EFSM.ChangeState(_EFSM.dead);
+        }
         
-            if (randomNumber == 0) //knockback
-            {
-                Vector2 knockbackDirection = new Vector2(player.transform.position.x - _EFSM.transform.position.x, 0).normalized;
-                _EFSM.rb.AddForce(-knockbackDirection * knockbackForce);
-                _EFSM.ChangeState(_EFSM.weakattack);
-            }
-            else //teleport
+        if (_EFSM.enemyAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.2f) //if hit animation has finished 
+        {
+            float randomNumber = Random.Range(1, 5); //returns a value between 1 and 4 (1/4 chance of teleporting if hit)
+            //float randomNumber = 1;
+
+            if (randomNumber == 1) //teleport
             {
                 _EFSM.ChangeState(_EFSM.teleport);
+
+            }
+            else //knockback 
+            {
+                Vector2 knockbackDirection = new Vector2(_EFSM.player.transform.position.x - _EFSM.transform.position.x, _EFSM.player.transform.position.y - _EFSM.transform.position.y).normalized;
+                Vector2 knockbackForce = new Vector2(knockbackDirection.x * knockbackForceX, knockbackDirection.y * knockbackForceY);
+
+                _EFSM.rb.AddForce(-knockbackForce);
+                _EFSM.ChangeState(_EFSM.weakattack);
+
+                Debug.Log(knockbackForce);
             }
         }
-
     }
 
     public override void Exit()
